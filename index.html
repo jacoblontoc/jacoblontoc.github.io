@@ -3,136 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jacob Lontoc | Portfolio</title>
+    <title>Jacob Lontoc</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <nav>
-                <div class="logo">JL</div>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div class="burger">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
-                </div>
-            </nav>
-        </header>
-
-        <section id="home" class="hero">
-            <div class="hero-content fade-in">
-                <h1>Jacob Lontoc</h1>
-                <h2 class="typing-text">I'm a <span class="typed-text"></span><span class="cursor">&nbsp;</span></h2>
-                <p>Computer Engineering at University of Maryland, Baltimore County</p>
-                <a href="#contact" class="cta-button">Contact Me</a>
+    <div class="terminal">
+        <div class="terminal-header">
+            <div class="terminal-title">~/portfolio</div>
+        </div>
+        
+        <div class="terminal-content">
+            <div class="ascii-art">
+    _                        
+    \`*-.                    
+     )  _`-.                 
+    .  : `. .                
+    : _   '  \               
+    ; *` _.   `*-._          
+    `-.-'          `-.       
+      ;       `       `.     
+      :.       .        \    
+      . \  .   :   .-'   .   
+      '  `+.;  ;  '      :   
+      :  '  |    ;       ;-. 
+      ; '   : :`-:     _.`* ;
+   .*' /  .*' ; .*`- +'  `*' 
+   `*-*   `*-*  `*-*'    
+                                         
             </div>
-        </section>
-
-        <section id="about" class="about slide-in">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Hello! I'm a passionate developer with expertise in creating clean, functional, and user-friendly digital experiences. I enjoy solving complex problems with elegant solutions.</p>
-                    <div class="skills">
-                        <h3>My Skills</h3>
-                        <div class="skill-bars">
-                            <div class="skill">
-                                <span>C/C++</span>
-                                <div class="skill-bar"><div class="skill-level" style="width: 50%"></div></div>
-                            </div>
-                            <div class="skill">
-                                <span>UI/UX Design</span>
-                                <div class="skill-bar"><div class="skill-level" style="width: 75%"></div></div>
-                            </div>
-                            <div class="skill">
-                                <span>JavaScript</span>
-                                <div class="skill-bar"><div class="skill-level" style="width: 40%"></div></div>
-                            </div>
-                            <div class="skill">
-                                <span>Python</span>
-                                <div class="skill-bar"><div class="skill-level" style="width: 20%"></div></div>
-                            </div>
-
-                        </div>
-                    </div>
+            
+            <div class="dashboard-info">
+                <div class="dashboard-title">Jacob Lontoc</div>
+            </div>
+            
+            <div class="keybindings">
+                <div class="keybinding-item">
+                    <span class="key">i</span>
+                    <span class="description">  >  LinkedIn</span>
+                </div>
+                <div class="keybinding-item">
+                    <span class="key">g</span>
+                    <span class="description">  >  GitHub</span>
+                </div>
+                <div class="keybinding-item">
+                    <span class="key">a</span>
+                    <span class="description">󰍉  >  About Me</span>
+                </div>
+                <div class="keybinding-item">
+                    <span class="key">q</span>
+                    <span class="description">  >  Close</span>
                 </div>
             </div>
-        </section>
-
-        <section id="projects" class="projects slide-in">
-            <h2>My Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-info">
-                        <h3>Project One</h3>
-                        <p>A brief description of the first project and the technologies used.</p>
-                        <div class="project-links">
-                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live</a>
-                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-info">
-                        <h3>Project Two</h3>
-                        <p>A brief description of the second project and the technologies used.</p>
-                        <div class="project-links">
-                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live</a>
-                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-info">
-                        <h3>Project Three</h3>
-                        <p>A brief description of the third project and the technologies used.</p>
-                        <div class="project-links">
-                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live</a>
-                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </div>
+            
+            <div class="status-bar">
+                <div class="status-item">NORMAL</div>
             </div>
-        </section>
+        </div>
+    </div>
 
-        <section id="contact" class="contact slide-in">
-            <h2>Contact Me</h2>
-            <div class="contact-content">
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-button">Send Message</button>
-                    </form>
-                </div>
-                <div class="social-links">
-                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-x-twitter"></i></a>
-                    <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
-                </div>
+    <!-- Hidden sections that will be displayed when activated -->
+    <div id="about-section" class="content-section">
+        <h2>About Me</h2>
+        <p>Hello, my name is Jacob Lontoc</p>
+        <p>I am a Computer Engineering student at University of Maryland, Baltimore County</p>
+        <hr>
+        <h3>Skills</h3>
+        
+        <div class="skill-item">
+            <div class="skill-info">
+                <span class="skill-name">C/C++</span>
+                <span class="skill-percentage">90%</span>
             </div>
-        </section>
-
-        <footer>
-            <p>&copy; 2025 All rights reserved.</p>
-        </footer>
+            <div class="skill-bar-container">
+                <div class="skill-bar" style="width: 90%"></div>
+            </div>
+        </div>
+        
+        <div class="skill-item">
+            <div class="skill-info">
+                <span class="skill-name">JavaScript</span>
+                <span class="skill-percentage">85%</span>
+            </div>
+            <div class="skill-bar-container">
+                <div class="skill-bar" style="width: 85%"></div>
+            </div>
+        </div>
+        
+        <div class="skill-item">
+            <div class="skill-info">
+                <span class="skill-name">Python</span>
+                <span class="skill-percentage">75%</span>
+            </div>
+            <div class="skill-bar-container">
+                <div class="skill-bar" style="width: 75%"></div>
+            </div>
+        </div>
+        
+        <div class="close-hint">Press 'Esc' to return to dashboard</div>
     </div>
 
     <script src="script.js"></script>
