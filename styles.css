@@ -1,11 +1,11 @@
 :root {
   --background: #3c3836;
   --foreground: #ebdbb2;
-  --terminal-border: #313244;
+  --terminal-border: #3c3836;
   --terminal-header: #32302f;
   --key-highlight: #ebdbb2;
   --status-bg: #3c3836;
-  --section-bg: #313244;
+  --section-bg: #504945;
   
   /* Background image customization variables */
   --bg-image: url('./images/background.jpg'); /* Local image path */
@@ -13,6 +13,14 @@
   --bg-size: cover; /* Options: cover, contain, auto, or specific dimensions */
   --bg-position: center; /* Options: center, top, right, bottom, left, or specific values */
   --bg-repeat: no-repeat; /* Options: no-repeat, repeat, repeat-x, repeat-y */
+
+  /* Lualine colors - Gruvbox inspired */
+  --mode-normal: #83a598;
+  --mode-text: #282828;
+  --statusline-bg: #32302f;
+  --statusline-fg: #ebdbb2;
+  --git-color: #b8bb26;
+  --diagnostic-color: #fb4934;
 }
 
 * {
@@ -133,10 +141,10 @@ body::after {
 .keybinding-item {
   display: flex;
   align-items: center;
-  gap: 12px;
   padding: 8px 16px;
   border-radius: 4px;
   transition: background-color 0.2s;
+  position: relative;
 }
 
 .keybinding-item:hover {
@@ -145,7 +153,8 @@ body::after {
 }
 
 .key {
-  display: inline-block;
+  position: absolute;
+  right: 16px;
   color: var(--key-highlight);
   font-weight: bold;
   min-width: 20px;
@@ -154,16 +163,87 @@ body::after {
 
 .description {
   font-size: 15px;
+  margin-right: 30px; /* Add space between description and key */
 }
 
 .status-bar {
-  margin-top: 10px;
-  background-color: var(--status-bg);
+  margin-top: 20px;
   display: flex;
-  justify-content: flex-end;
-  padding: 3px 5px;
-  font-size: 14px;
-  border-radius: 1px;
+  align-items: center;
+  font-size: 13px;
+  height: 24px;
+  background-color: var(--statusline-bg);
+  color: var(--statusline-fg);
+  width: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.status-section {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  height: 100%;
+  background-color: var(--section-bg);
+}
+
+.status-icon {
+  margin-right: 5px;
+}
+
+.status-section.mode {
+  background-color: var(--mode-normal);
+  color: var(--mode-text);
+  font-weight: bold;
+}
+
+.status-section.git {
+  color: var(--git-color);
+}
+
+.status-section.diagnostic {
+  color: var(--diagnostic-color);
+}
+
+.status-separator {
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.status-separator.left {
+  border-width: 24px 10px 0 0;
+  border-color: transparent var(--section-bg) transparent transparent;
+  margin-right: -1px;
+}
+
+.status-separator.right {
+  border-width: 0 0 24px 10px;
+  border-color: transparent transparent transparent var(--section-bg);
+  margin-left: -1px;
+}
+
+.status-spacer {
+  flex-grow: 1;
+  height: 100%;
+  background-color: var(--statusline-bg);
+}
+
+/* Fix for the separator after the mode section */
+.status-section.mode + .status-separator.left {
+  border-color: transparent var(--section-bg) transparent transparent;
+}
+
+/* Ensure mode section has correct left border radius */
+.status-section:first-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+/* Ensure last section has correct right border radius */
+.status-section:last-child {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
 .content-section {
@@ -231,7 +311,7 @@ hr {
 
 .skill-bar {
   height: 100%;
-  background-color: #a6e3a1; /* Green progress bar */
+  background-color: #b8bb26; /* Green progress bar */
   border-radius: 4px;
   transition: width 1s ease-in-out;
 }
