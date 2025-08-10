@@ -23,11 +23,18 @@
   --diagnostic-color: #fb4934;
 }
 
+@font-face {
+  font-family: 'JetBrains Mono Nerd Font';
+  src: url('./fonts/JetBrainsMonoNerdFont-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-family: 'JetBrains Mono Nerd Font', 'JetBrains Mono', 'Fira Code', monospace;
 }
 
 body {
@@ -77,6 +84,8 @@ body::after {
   border-radius: 6px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   overflow: hidden;
+  opacity: 0;
+  animation: terminalFadeIn 0.4s ease-out forwards;
 }
 
 .terminal-header {
@@ -103,13 +112,16 @@ body::after {
   white-space: pre;
   text-align: center;
   color: #a6e3a1;
-  height: 150px;
+  min-height: 180px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 12px;
   margin: 0 auto;
   width: 100%;
+  padding: 10px 0;
+  line-height: 1.1;
 }
 
 .dashboard-info {
@@ -330,6 +342,17 @@ hr {
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+@keyframes terminalFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .fade-in {
