@@ -265,67 +265,207 @@ body::after {
   width: 100%;
   height: 100%;
   background-color: var(--background);
-  padding: 40px;
+  padding: 60px 40px;
   display: none;
   flex-direction: column;
   color: var(--foreground);
   z-index: 10;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
-.content-section h2, .content-section h3 {
+.about-header {
+  text-align: center;
+  margin-bottom: 50px;
+  padding-bottom: 30px;
+  border-bottom: 2px solid var(--terminal-border);
+}
+
+.about-header h1 {
+  font-size: 3em;
   color: #f9e2af;
   margin-bottom: 20px;
+  font-weight: bold;
 }
 
-.content-section h3 {
-  margin-top: 30px;
-  font-size: 1.4em;
+.about-header .subtitle {
+  font-size: 1.2em;
+  line-height: 1.8;
+  opacity: 0.9;
+  max-width: 800px;
+  margin: 10px auto;
 }
 
-.content-section p {
+.section-container {
+  max-width: 900px;
+  margin: 0 auto 50px auto;
+  width: 100%;
+}
+
+.section-container h3 {
+  color: #f9e2af;
+  font-size: 1.8em;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(235, 219, 178, 0.3);
+}
+
+.section-container h4 {
+  color: #b8bb26;
+  font-size: 1.1em;
   margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.entry {
+  margin-bottom: 35px;
+  padding-left: 20px;
+  border-left: 2px solid var(--terminal-border);
+  padding-bottom: 20px;
+}
+
+.entry h5 {
+  color: #83a598;
+  font-size: 1.3em;
+  margin-bottom: 8px;
+}
+
+.entry h6 {
+  color: #d3869b;
+  font-size: 1.1em;
+  margin-bottom: 5px;
+  font-weight: normal;
+}
+
+.entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.institution {
+  color: #83a598;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.detail {
+  color: #d3869b;
+  font-size: 1em;
+}
+
+.entry-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+  gap: 10px;
+}
+
+.date {
+  color: #fabd2f;
+  font-size: 0.95em;
+  font-style: italic;
+}
+
+.entry-description {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.entry-description li {
+  margin-bottom: 8px;
   line-height: 1.6;
+  opacity: 0.9;
+}
+
+.skill-category {
+  margin-bottom: 25px;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.skill-tag {
+  color: #83a598;
+  font-size: 1.1em;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.skill-tag::before {
+  content: attr(data-icon);
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  transform: translateX(-50%) translateY(0);
+  font-size: 2.5em;
+  font-family: 'JetBrains Mono Nerd Font', monospace;
+  opacity: 0;
+  pointer-events: none;
+  transition: none;
+  color: #f9e2af;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.skill-tag:hover {
+  transform: scale(1.1);
+}
+
+.skill-tag:hover::before {
+  animation: popOut 0.6s ease-out forwards;
+}
+
+@keyframes popOut {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(0) scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-40px) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-60px) scale(0.8);
+  }
+}
+
+.project-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.project-links a {
+  color: #b8bb26;
+  text-decoration: none;
+  padding: 6px 12px;
+  border: 1px solid #b8bb26;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  font-size: 0.9em;
+}
+
+.project-links a:hover {
+  background-color: rgba(184, 187, 38, 0.2);
+  transform: translateY(-2px);
 }
 
 hr {
   border: none;
   border-top: 1px solid var(--terminal-border);
   margin: 25px 0;
-}
-
-/* Skill bars styling */
-.skill-item {
-  margin-bottom: 20px;
-}
-
-.skill-info {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 5px;
-}
-
-.skill-name {
-  font-weight: bold;
-}
-
-.skill-percentage {
-  opacity: 0.8;
-}
-
-.skill-bar-container {
-  width: 100%;
-  height: 8px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.skill-bar {
-  height: 100%;
-  background-color: #b8bb26; /* Green progress bar */
-  border-radius: 4px;
-  transition: width 1s ease-in-out;
 }
 
 .close-hint {
