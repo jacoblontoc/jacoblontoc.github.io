@@ -84,8 +84,8 @@ body::after {
   border-radius: 6px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   overflow: hidden;
-  opacity: 0;
-  animation: terminalFadeIn 0.4s ease-out forwards;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .terminal-header {
@@ -272,6 +272,8 @@ body::after {
   z-index: 10;
   overflow-y: auto;
   overflow-x: hidden;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .about-header {
@@ -283,7 +285,7 @@ body::after {
 
 .about-header h1 {
   font-size: 3em;
-  color: #f9e2af;
+  color: #ebdbb2;
   margin-bottom: 20px;
   font-weight: bold;
 }
@@ -303,7 +305,7 @@ body::after {
 }
 
 .section-container h3 {
-  color: #f9e2af;
+  color: #ebdbb2;
   font-size: 1.8em;
   margin-bottom: 25px;
   padding-bottom: 10px;
@@ -311,7 +313,7 @@ body::after {
 }
 
 .section-container h4 {
-  color: #b8bb26;
+  color: #ebdbb2;
   font-size: 1.1em;
   margin-bottom: 10px;
   margin-top: 20px;
@@ -325,13 +327,13 @@ body::after {
 }
 
 .entry h5 {
-  color: #83a598;
+  color: #ebdbb2;
   font-size: 1.3em;
   margin-bottom: 8px;
 }
 
 .entry h6 {
-  color: #d3869b;
+  color: #ebdbb2;
   font-size: 1.1em;
   margin-bottom: 5px;
   font-weight: normal;
@@ -347,13 +349,22 @@ body::after {
 }
 
 .institution {
-  color: #83a598;
+  color: #ebdbb2;
   font-size: 1.2em;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.institution-logo {
+  height: 30px;
+  width: auto;
+  vertical-align: middle;
 }
 
 .detail {
-  color: #d3869b;
+  color: #ebdbb2;
   font-size: 1em;
 }
 
@@ -367,7 +378,7 @@ body::after {
 }
 
 .date {
-  color: #fabd2f;
+  color: #ebdbb2;
   font-size: 0.95em;
   font-style: italic;
 }
@@ -384,19 +395,39 @@ body::after {
   opacity: 0.9;
 }
 
+.entry-paragraph {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .skill-category {
-  margin-bottom: 25px;
+  margin-bottom: 0;
 }
 
 .skill-tags {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 15px;
   margin-top: 10px;
+  align-items: flex-start;
 }
 
 .skill-tag {
-  color: #83a598;
+  color: #ebdbb2;
   font-size: 1.1em;
   position: relative;
   cursor: pointer;
@@ -414,7 +445,7 @@ body::after {
   opacity: 0;
   pointer-events: none;
   transition: none;
-  color: #f9e2af;
+  color: #ebdbb2;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -448,17 +479,17 @@ body::after {
 }
 
 .project-links a {
-  color: #b8bb26;
+  color: #ebdbb2;
   text-decoration: none;
   padding: 6px 12px;
-  border: 1px solid #b8bb26;
+  border: 1px solid #ebdbb2;
   border-radius: 4px;
   transition: all 0.2s ease;
   font-size: 0.9em;
 }
 
 .project-links a:hover {
-  background-color: rgba(184, 187, 38, 0.2);
+  background-color: rgba(235, 219, 178, 0.2);
   transform: translateY(-2px);
 }
 
@@ -476,6 +507,30 @@ hr {
   padding: 8px 12px;
   border-radius: 4px;
   opacity: 0.8;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.close-hint:hover {
+  opacity: 1;
+}
+
+.close-hint-mobile {
+  display: none;
+}
+
+.close-hint-desktop {
+  display: inline;
+}
+
+@media (max-width: 768px) {
+  .close-hint-mobile {
+    display: inline;
+  }
+  
+  .close-hint-desktop {
+    display: none;
+  }
 }
 
 /* Animation for sections */

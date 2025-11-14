@@ -43,43 +43,11 @@
                 </div>
                 <div class="keybinding-item">
                     <span class="key">g</span>
-                    <span class="description">   >  GitHub</span>
+                    <span class="description">  >  GitHub</span>
                 </div>
                 <div class="keybinding-item">
                     <span class="key">a</span>
                     <span class="description">󰍉  >  About Me</span>
-                </div>
-                <div class="keybinding-item">
-                    <span class="key">q</span>
-                    <span class="description">  >  Close</span>
-                </div>
-            </div>
-            
-            <div class="status-bar">
-                <div class="status-section mode">
-                    <span class="status-icon">󰆾</span>
-                    <span>NORMAL</span>
-                </div>
-                <div class="status-section file">
-                    <span class="status-icon"></span>
-                    <span>portfolio.md</span>
-                </div>
-                <div class="status-section git">
-                    <span class="status-icon"></span>
-                    <span>main</span>
-                </div>
-                <div class="status-spacer"></div>
-                
-                <div class="status-section diagnostic">
-                    <span class="status-icon">󰏫</span>
-                    <span>0</span>
-                </div>
-                <div class="status-section filetype">
-                    <span class="status-icon"></span>
-                    <span>dashboard</span>
-                </div>
-                <div class="status-section position">
-                    <span>1:1/15</span>
                 </div>
             </div>
         </div>
@@ -88,17 +56,22 @@
     <!-- Hidden sections that will be displayed when activated -->
     <div id="about-section" class="content-section">
         <div class="about-header">
-            <h1>Jacob Lontoc</h1>
             <p class="subtitle">Hello! I'm Jacob, a Computer Engineering student at University of Maryland, Baltimore County.</p>
-            <p class="subtitle">I'm interested in software and web development. I love playing around with full-body motion tracking and virtual/mixed reality.</p>
         </div>
 
         <div class="section-container">
             <h3>Education:</h3>
             <div class="entry">
                 <div class="entry-header">
-                    <span class="institution">University of Maryland, Baltimore County</span>
-                    <span class="detail">B.S Computer Engineering</span>
+                    <span class="institution">
+                        <img src="images/umbc-logo.png" alt="UMBC Logo" class="institution-logo">
+                        University of Maryland, Baltimore County
+                    </span>
+                    <span class="detail">
+                        B.S Computer Engineering<br>
+                        Minor in Physics
+                    </span>
+                    
                 </div>
             </div>
         </div>
@@ -106,31 +79,39 @@
         <div class="section-container">
             <h3>Technical Skills:</h3>
             
-            <div class="skill-category">
-                <h4>Programming</h4>
-                <div class="skill-tags">
-                    <span class="skill-tag" data-icon="󰙲">C++</span>
-                    <span class="skill-tag" data-icon="󰙱">C</span>
-                    <span class="skill-tag" data-icon="󰌠">Python</span>
-                    <span class="skill-tag" data-icon="󰌞">JavaScript</span>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Programming</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag" data-icon="󰙲">C++/C</span>
+                        <span class="skill-tag" data-icon="󰌠">Python</span>
+                        <span class="skill-tag" data-icon="󰌞">JavaScript</span>
+                        <span class="skill-tag" data-icon="󰌝">HTML</span>
+                        <span class="skill-tag" data-icon="󰌜">CSS</span>
+                        <span class="skill-tag" data-icon="󰌞">JavaScript</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="skill-category">
-                <h4>Web Development</h4>
-                <div class="skill-tags">
-                    <span class="skill-tag" data-icon="󰌝">HTML</span>
-                    <span class="skill-tag" data-icon="󰌜">CSS</span>
-                    <span class="skill-tag" data-icon="󰌞">JavaScript</span>
+                <div class="skill-category">
+                    <h4>Electrical</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag" data-icon="">Ardiuno</span>
+                        <span class="skill-tag" data-icon="">Inertial Measurement Unit (IMU)</span>
+                        <span class="skill-tag" data-icon="">Raspberry Pi</span>
+                        <span class="skill-tag" data-icon="">VR/XR</span>
+                        <span class="skill-tag" data-icon="">Circuit Theory</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="skill-category">
-                <h4>Tools</h4>
-                <div class="skill-tags">
-                    <span class="skill-tag" data-icon="󰊢">Git</span>
-                    <span class="skill-tag" data-icon="󰌽">Linux</span>
-                    <span class="skill-tag" data-icon="󰖳">Windows</span>
+                <div class="skill-category">
+                    <h4>Tools</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag" data-icon="󰊢">Git</span>
+                        <span class="skill-tag" data-icon="󰌽">Linux</span>
+                        <span class="skill-tag" data-icon="󰖳">Windows</span>
+                        <span class="skill-tag" data-icon="">Xcode</span>
+                        <span class="skill-tag" data-icon="">Ardiuno</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -138,29 +119,50 @@
         <div class="section-container">
             <h3>Experience:</h3>
             <div class="entry">
-                <h5>Position Title</h5>
+                <h5>IEEE Sumobot Engineer</h5>
                 <div class="entry-details">
-                    <h6>Company Name</h6>
-                    <span class="date">Month Year - Present</span>
+                    <h6>University of Maryland, Baltimore County</h6>
+                    <span class="date">September 2025 - Present</span>
                 </div>
+                <p class="entry-paragraph">
+                    Engineered a fully autonomous Sumobot for the IEEE competition, integrating mechanical design, custom electronics, and embedded software development.
+                    <br><br>
+                    Developed control logic in C++ to manage sensor feedback (IR/distance) for opponent tracking and autonomous ring-staying, while constructing a chassis that optimizes power and speed.
+                </p>
                 <ul class="entry-description">
-                    <li>Add your experience details here</li>
-                    <li>Describe your responsibilities and achievements</li>
+                    <li>Project management, embedded systems, Arduinos, and infrared (IR)</li>
                 </ul>
             </div>
         </div>
 
         <div class="section-container">
             <h3>Projects:</h3>
+
             <div class="entry">
-                <h5>Project Name</h5>
+                <h5>Timely</h5>
                 <div class="entry-details">
-                    <h6>Project Type</h6>
-                    <span class="date">Month Year</span>
+                    <h6>Personal Swift Project</h6>
+                    <span class="date">April 2025 - Present</span>
                 </div>
                 <ul class="entry-description">
-                    <li>Describe your project here</li>
-                    <li>Add technical details and achievements</li>
+                    <li>App built around blocking and scheduling. Approach similar to Notion but without the note-taking.</li>
+                    <li>App development</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://github.com/jacoblontoc/checkers-project/tree/main" target="_blank">GitHub</a>
+                    <a href="https://jacoblontoc.github.io/checkers-project/" target="_blank">Live Demo</a>
+                </div>
+            </div>
+
+            <div class="entry">
+                <h5>Checkers: Powerup</h5>
+                <div class="entry-details">
+                    <h6>Game Project</h6>
+                    <span class="date">October 2024 - March 2025</span>
+                </div>
+                <ul class="entry-description">
+                    <li>A twist on the classic board game, checkers. Including power-ups and special events.</li>
+                    <li>Game and web design, Javascript & HTML/CSS, </li>
                 </ul>
                 <div class="project-links">
                     <a href="#" target="_blank">GitHub</a>
@@ -168,8 +170,14 @@
                 </div>
             </div>
         </div>
+
+
         
-        <div class="close-hint">Press 'Esc' to return to dashboard</div>
+        
+        <div class="close-hint" id="close-hint" onclick="closeAllSections()">
+            <span class="close-hint-desktop">Press 'Esc' to return to dashboard</span>
+            <span class="close-hint-mobile">Return to dashboard</span>
+        </div>
     </div>
 
     <script src="script.js"></script>
