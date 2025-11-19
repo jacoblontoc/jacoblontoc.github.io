@@ -274,6 +274,12 @@ body::after {
   overflow-x: hidden;
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.content-section::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 .about-header {
@@ -286,7 +292,7 @@ body::after {
 .about-header h1 {
   font-size: 3em;
   color: #ebdbb2;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-weight: bold;
 }
 
@@ -295,7 +301,21 @@ body::after {
   line-height: 1.8;
   opacity: 0.9;
   max-width: 800px;
-  margin: 10px auto;
+  margin: 5px auto;
+}
+
+.about-header .location {
+  font-size: 1em;
+  opacity: 0.8;
+  margin: 5px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.location-icon {
+  font-size: 1.1em;
 }
 
 .section-container {
