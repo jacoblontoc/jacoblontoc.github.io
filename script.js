@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Links for keyboard navigation
     const links = {
-        'i': 'https://www.linkedin.com/in/jacob-lontoc', // Replace with your LinkedIn URL
-        'g': 'https://github.com/jacoblontoc', // Replace with your GitHub URL
+        'i': 'https://www.linkedin.com/in/jacob-lontoc',
+        'g': 'https://github.com/jacoblontoc'
     };
 
     // Sections to show/hide
