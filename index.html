@@ -1,201 +1,124 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jacob Lontoc</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jacob Lontoc — computer engineering at UMBC. Selected work in embedded hardware, private AI infrastructure, and ML systems research.">
+  <meta name="theme-color" content="#faf9f6">
+  <title>jacob lontoc — hardware, software & systems</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/space-grotesk-regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="terminal">
-        <div class="terminal-header">
-            <div class="terminal-title">~/portfolio.md</div>
+  <a class="skip-link" href="#experiences">Skip to experiences</a>
+  <div class="site-shell">
+    <header class="page-header">
+      <div class="introduction">
+        <h1>jacob lontoc</h1>
+        <p class="subtitle">hardware · software · ai infrastructure</p>
+      </div>
+      <div class="contact">
+        <h2>say hello</h2>
+        <a href="mailto:jacobc.lontoc@gmail.com">jacobc.lontoc@gmail.com <span aria-hidden="true">↗</span></a>
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/jacob-lontoc" target="_blank" rel="noopener noreferrer">linkedin <span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/jacoblontoc" target="_blank" rel="noopener noreferrer">github <span aria-hidden="true">↗</span></a>
+          <a href="jacob-lontoc-cv.pdf" target="_blank" rel="noopener">cv <span aria-hidden="true">↗</span></a>
         </div>
-        
-        <div class="terminal-content">
-            <div class="ascii-art">
-    _                        
-    \`*-.                    
-     )  _`-.                 
-    .  : `. .                
-    : _   '  \               
-    ; *` _.   `*-._          
-    `-.-'          `-.       
-      ;       `       `.     
-      :.       .        \    
-      . \  .   :   .-'   .   
-      '  `+.;  ;  '      :   
-      :  '  |    ;       ;-. 
-      ; '   : :`-:     _.`* ;
-   .*' /  .*' ; .*`- +'  `*' 
-   `*-*   `*-*  `*-*'    
-                                         
-            </div>
-            
-            <div class="dashboard-info">
-                <div class="dashboard-title">Jacob Lontoc</div>
-            </div>
-            
-            <div class="keybindings">
-                <div class="keybinding-item">
-                    <span class="key">a</span>
-                    <span class="description">󰍉  >  About Me</span>
-                </div>
-                <div class="keybinding-item">
-                    <span class="key">i</span>
-                    <span class="description">  >  LinkedIn</span>
-                </div>
-                <div class="keybinding-item">
-                    <span class="key">g</span>
-                    <span class="description">  >  GitHub</span>
-                </div>
-            </div>
+        <span class="location">baltimore, maryland</span>
+      </div>
+    </header>
+
+    <div class="workspace">
+      <nav class="section-nav" aria-label="Portfolio sections">
+        <a href="#experiences" class="section-pill active" aria-label="experiences" aria-current="location"></a>
+        <a href="#projects" class="section-pill" aria-label="projects"></a>
+        <a href="#research" class="section-pill" aria-label="research"></a>
+        <a href="#about-me" class="section-pill" aria-label="about me"></a>
+      </nav>
+
+      <main class="scroll-pane" id="work" tabindex="0" aria-label="Experiences, projects, research, and about me">
+        <section class="work-section" id="experiences" aria-labelledby="experience-heading">
+          <div class="section-heading"><h2 id="experience-heading">experiences</h2></div>
+          <article class="entry">
+            <div class="entry-heading company-heading"><h3>orivia tech</h3><span class="company-link"><span class="heading-divider" aria-hidden="true">·</span><a class="text-link" href="https://www.linkedin.com/company/orivia-tech" target="_blank" rel="noopener noreferrer" aria-label="Orivia Tech on LinkedIn">linkedin</a></span><span class="company-place"><span class="heading-divider" aria-hidden="true">·</span><span class="entry-location">rockville, md</span></span></div>
+            <p class="role">building intelligence engineer, lead</p>
+            <p>A four-month hardware and software engineering fellowship. Built a sensor-based product that collects data from homes and turns it into informed energy recommendations for homeowners, building managers, and energy auditors.</p>
+          </article>
+          <article class="entry">
+            <div class="entry-heading company-heading"><h3>vostner</h3><span class="company-link"><span class="heading-divider" aria-hidden="true">·</span><a class="text-link" href="https://vostner.com" target="_blank" rel="noopener noreferrer">vostner.com</a></span><span class="company-place"><span class="heading-divider" aria-hidden="true">·</span><span class="entry-location">washington, dc</span></span></div>
+            <p class="role">co-founder</p>
+            <p>Developing software to deploy and manage private AI on company-owned hardware. Designing custom servers and supporting existing infrastructure, giving businesses control over their data, models, and workloads.</p>
+          </article>
+          <article class="entry">
+            <div class="entry-heading company-heading"><h3>blue wave semiconductor</h3><span class="company-link"><span class="heading-divider" aria-hidden="true">·</span><a class="text-link" href="https://www.bluewavesemi.com/" target="_blank" rel="noopener noreferrer">bluewavesemi.com</a></span><span class="company-place"><span class="heading-divider" aria-hidden="true">·</span><span class="entry-location">baltimore, md</span></span></div>
+            <p class="role">electrical engineering intern</p>
+            <p>Worked on R&amp;D semiconductor fabrication equipment for labs and universities. Developed parts for hot-filament CVD and lab-grown diamond fabrication through CNC and collaborative CAD design, while helping mentor new interns.</p>
+          </article>
+          <article class="entry compact-entry">
+            <div class="entry-heading"><h3>mcdonald’s</h3></div>
+            <p class="role">crew trainer</p>
+            <p>Trained new crew members on kitchen stations, food safety standards, and operating procedures.</p>
+          </article>
+        </section>
+
+        <section class="work-section" id="projects" aria-labelledby="projects-heading">
+          <div class="section-heading"><h2 id="projects-heading">projects</h2></div>
+          <article class="entry featured-entry">
+            <div class="entry-heading"><h3>ieee sumobot</h3><span class="award">1st place / 16 teams</span></div>
+            <p class="role">project leader</p>
+            <p>Led the team through the programming phase of an autonomous Sumobot, placing first against 15 other teams. Soldered components, modeled chassis pieces in 3D, and built the robot’s logic from the ground up.</p>
+            <p>Connected infrared sensing, Arduino programming, and mechanical design into a robot that could find its opponent and stay in the ring.</p>
+            <a class="project-link" href="https://github.com/jacoblontoc/IEEE-UMBC-sumobot/blob/main/documentation/project-documentation.md" target="_blank" rel="noopener noreferrer">the build & documentation <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="entry">
+            <div class="entry-heading"><h3>plateai</h3><a class="text-link" href="https://www.plateai.app/" target="_blank" rel="noopener noreferrer">plateai.app <span aria-hidden="true">↗</span></a></div>
+            <p class="role">app development</p>
+            <p>A recipe cookbook with a personal AI sous-chef. Bringing recipe creation and a social space for cooks together across mobile and web.</p>
+          </article>
+          <article class="entry">
+            <div class="entry-heading"><h3>timelee</h3><span class="entry-note">on hiatus</span></div>
+            <p class="role">full-stack development</p>
+            <p>A life-planning application for Android and the web. Built both the frontend experience and the backend architecture.</p>
+            <a class="project-link" href="https://github.com/jacoblontoc/timelee" target="_blank" rel="noopener noreferrer">view the project <span aria-hidden="true">↗</span></a>
+          </article>
+        </section>
+
+        <section class="work-section" id="research" aria-labelledby="research-heading">
+          <div class="section-heading"><h2 id="research-heading">research</h2></div>
+          <article class="entry research-entry">
+            <div class="entry-heading"><h3>ml systems research</h3><span class="ongoing"><span aria-hidden="true"></span>in progress</span></div>
+            <p class="role">researcher · mixture-of-experts inference</p>
+            <p>Conducting collaborative research on MoE inference optimization, with a focus on GPU memory management and decode latency.</p>
+            <p>I’m developing a vLLM-based implementation of VAMP’s dynamic memory repartitioning framework, exploring how memory allocation can adapt across the different stages of inference.</p>
+            <p>The work combines predictive expert prefetching and compressed weight transfer to recover degraded decoding performance while preserving improvements in time to first token.</p>
+          </article>
+        </section>
+        <section class="work-section about-section" id="about-me" aria-labelledby="about-heading">
+          <div class="section-heading"><h2 id="about-heading">about me</h2></div>
+          <article class="entry about-copy">
+            <p>I'm Jacob Lontoc, a Filipino-American undergraduate at UMBC. I've enjoyed messing around with technology since I was young, and I feel lucky to get to do it for work. I'm always open to learning something new, and I love hearing people talk about the things they enjoy.</p>
+            <p>I've been exploring AI infrastructure through projects like Vostner and researching AI inference speed and optimization. Electronics is another big part of what I do, and lately I've been getting into designing consumer-grade circuit boards.</p>
+            <p>I love basketball, especially the San Antonio Spurs. I also enjoy playing the violin, playing VR games, and making Roblox games.</p>
+          </article>
+        </section>
+      </main>
+
+      <aside class="sidebar" aria-label="Skills, education, and images">
+        <div class="skill-group"><h3>code</h3><p>c / c++ · python · kotlin<br>javascript · bash</p></div>
+        <div class="skill-group"><h3>hardware</h3><p>embedded c · esp / stm / arduino<br>i²c · spi · uart · imus<br>hmi / modbus · sensor interfacing<br>soldering · lasers · fusion 360</p></div>
+        <div class="field-notes">
+          <div class="sidebar-top"><h2>bits of the work</h2><span>↘</span></div>
+          <a class="photo-note robot-note" href="#projects" aria-label="Explore the IEEE Sumobot project"><figure><img src="images/sumobot.jpg" alt="The assembled Sumobot with its infrared sensor array, exposed circuit board, and custom chassis" width="900" height="675"><figcaption><span>01 — small robot, big plans</span><span aria-hidden="true">↗</span></figcaption></figure></a>
+          <a class="photo-note server-note" href="#experiences" aria-label="Explore the Vostner experience"><figure><div class="server-image"><img src="images/vostner-compact.webp" alt="Vostner Compact private AI server product render" width="600" height="600" loading="lazy"></div><figcaption><span>02 — private ai, physical form</span><span aria-hidden="true">↗</span></figcaption></figure></a>
         </div>
+        <div class="skill-group"><h3>ai & ml</h3><p>pytorch · vllm / tensorrt-llm<br>onnx · flashattention<br>quantization · inference optimization<br>fine-tuning / lora</p></div>
+        <div class="skill-group"><h3>systems & tools</h3><p>linux / unix · docker · proxmox<br>aws · cloudflare · git · matlab<br>soc 2 / hipaa familiarity</p></div>
+        <div class="education"><h3>university of maryland,<br>baltimore county</h3><p>b.s. computer engineering<br>minor in physics</p><span>2024 — 2028</span></div>
+      </aside>
     </div>
-
-    <!-- Hidden sections that will be displayed when activated -->
-    <div id="about-section" class="content-section">
-        <div class="about-header">
-            <h1>Jacob Lontoc</h1>
-            <p class="subtitle">Computer Engineer</p>
-            <p class="location"><span class="location-icon"></span> Baltimore, MD</p>
-        </div>
-
-        <div class="section-container">
-            <h3>About Me</h3>
-            <p class="about-text">
-                Hello, I'm a computer engineer student that likes contributing to the VR/XR space. I'm also interested in software development/engineering, security, and embedded systems.
-            </p>
-        </div>
-
-        <div class="section-container">
-            <h3>Education</h3>
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="institution">
-                        <img src="images/umbc-logo.png" alt="UMBC Logo" class="institution-logo">
-                        University of Maryland, Baltimore County
-                    </span>
-                    <span class="detail">
-                        B.S Computer Engineering<br>
-                        Minor in Physics
-                    </span>
-                    
-                </div>
-            </div>
-        </div>
-
-        <div class="section-container">
-            <h3>Technical Skills</h3>
-            
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h4>Programming</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag" data-icon="󰙲">C/C++</span>
-                        <span class="skill-tag" data-icon="󰌠">Python</span>
-                        <span class="skill-tag" data-icon="󰌞">JavaScript</span>
-                        <span class="skill-tag" data-icon="󰌝 󰌜">HTML/CSS</span>
-                        <span class="skill-tag" data-icon="">Swift</span>
-                        <span class="skill-tag" data-icon="">Kotlin</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h4>Electrical</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag" data-icon="">Ardiuno</span>
-                        <span class="skill-tag" data-icon="">Inertial Measurement Unit (IMU)</span>
-                        <span class="skill-tag" data-icon="">Raspberry Pi</span>
-                        <span class="skill-tag" data-icon="">VR/XR</span>
-                        <span class="skill-tag" data-icon="">Circuit Theory</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h4>Tools</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag" data-icon="">Firebase</span>
-                        <span class="skill-tag" data-icon="">Vercel</span>
-                        <span class="skill-tag" data-icon="">GNU Debugger</span>
-                        <span class="skill-tag" data-icon="">Xcode</span>
-                        <span class="skill-tag" data-icon="󰀴">Android Studio</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="section-container">
-            <h3>Projects</h3>
-
-            <div class="entry">
-                <h5>IEEE Sumobot Engineer</h5>
-                <div class="entry-details">
-                    <h6>Robotics Project</h6>
-                    <span class="date">September 2025 - March 2026</span>
-                </div>
-                <p class="entry-paragraph">
-                    Engineered a fully autonomous Sumobot for the IEEE competition, integrating mechanical design, custom electronics, and embedded software development.
-                </p>
-                <div class="project-links">
-                    <a href="https://github.com/jacoblontoc/IEEE-UMBC-sumobot/blob/main/documentation/project-documentation.md" target="_blank">Documentation</a>
-                </div>
-            </div>
-
-            <div class="entry">
-                <h5>PlateAI</h5>
-                <div class="entry-details">
-                    <h6>App Development</h6>
-                    <span class="date">September 2025 - Present</span>
-                </div>
-                <p class="entry-paragraph">
-                    Recipe cookbook with a personal AI sous-chef to help you create recipes. A convenience app and social media for chefs
-                    built all in one. Available on iOS, Android, and online.
-                </p>
-                <div class="project-links">
-                    <a href="https://www.plateai.app/" target="_blank">Website</a>
-                    <a href="https://www.plateai.app/" target="_blank">Google Play Store</a>
-                    <a href="https://www.plateai.app/" target="_blank">App Store</a>
-                </div>
-            </div>
-
-            <div class="entry">
-                <h5>Timelee</h5>
-                <div class="entry-details">
-                    <h6>App Development</h6>
-                    <span class="date">April 2025 - Hiatus</span>
-                </div>
-                <p class="entry-paragraph">
-                   Developed a full-stack life-planner application for Android and web platforms, handling both frontend and backend architecture.
-                </p>
-                <div class="project-links">
-                    <a href="https://jacoblontoc.github.io/timelee/" target="_blank">Website</a>
-                </div>
-            </div>
-
-            <div class="entry">
-                <h5>Checkers: Powerup</h5>
-                <div class="entry-details">
-                    <h6>Game Project</h6>
-                    <span class="date">October 2024 - March 2025</span>
-                </div>
-                <p class="entry-paragraph">
-                   Created a twist on the classic checkers game with power-ups and special events, designing and implementing the frontend interface using JavaScript and HTML/CSS.
-                </p>
-                <div class="project-links">
-                    <a href="https://jacoblontoc.github.io/checkers-project/" target="_blank">Website</a>
-                    <a href="https://github.com/jacoblontoc/checkers-project/tree/main" target="_blank">GitHub</a>
-                </div>
-            </div>
-        </div>
-
-        
-        <div class="close-hint" id="close-hint" onclick="closeAllSections()">
-            <span class="close-hint-desktop">Press 'Esc' to return to dashboard</span>
-            <span class="close-hint-mobile">Return to dashboard</span>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+  </div>
 </body>
 </html>

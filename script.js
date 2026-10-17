@@ -1,86 +1,75 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Links for keyboard navigation
-    const links = {
-        'i': 'https://www.linkedin.com/in/jacob-lontoc',
-        'g': 'https://github.com/jacoblontoc'
-    };
+(() => {
+  const pane = document.querySelector('.scroll-pane');
+  const sections = [...document.querySelectorAll('.work-section')];
+  const pills = [...document.querySelectorAll('.section-pill')];
+  const desktop = window.matchMedia('(min-width: 761px)');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const validSections = new Map(sections.map(section => [`#${section.id}`, section]));
+  let framePending = false;
 
-    // Sections to show/hide
-    const aboutSection = document.getElementById('about-section');
-    const terminal = document.querySelector('.terminal');
-
-    // Restore previous state on page load
-    const savedState = localStorage.getItem('currentPage');
-    if (savedState === 'about') {
-        terminal.style.display = 'none';
-        aboutSection.style.display = 'flex';
-        aboutSection.classList.add('fade-in');
-    }
-
-    // Function to handle keydown events
-    document.addEventListener('keydown', function(event) {
-        const key = event.key.toLowerCase();
-
-        // Handle navigation keys
-        if (links.hasOwnProperty(key)) {
-            window.open(links[key], '_blank');
-        }
-        
-        // About section
-        if (key === 'a') {
-            terminal.style.display = 'none';
-            aboutSection.style.display = 'flex';
-            aboutSection.classList.add('fade-in');
-            localStorage.setItem('currentPage', 'about');
-        }
-        
-        // Close sections / return to dashboard (only Escape key)
-        if (key === 'escape') {
-            closeAllSections();
-        }
+  function markSection(id) {
+    pills.forEach(pill => {
+      const active = pill.hash === `#${id}`;
+      pill.classList.toggle('active', active);
+      if (active) pill.setAttribute('aria-current', 'location');
+      else pill.removeAttribute('aria-current');
     });
+  }
 
-    // Add click event listeners to keybinding items
-    document.querySelectorAll('.keybinding-item').forEach(item => {
-        item.addEventListener('click', function() {
-            const keyText = this.querySelector('.key').textContent;
-            simulateKeyPress(keyText);
-        });
+  function updatePosition() {
+    const boundary = desktop.matches ? pane.getBoundingClientRect().top + 85 : 85;
+    let current = sections[0];
+    for (const section of sections) {
+      if (section.getBoundingClientRect().top <= boundary) current = section;
+    }
+    markSection(current.id);
+    framePending = false;
+  }
+
+  function queueUpdate() {
+    if (!framePending) {
+      framePending = true;
+      window.requestAnimationFrame(updatePosition);
+    }
+  }
+
+  function navigate(hash, { focus = false, smooth = true } = {}) {
+    const section = validSections.get(hash);
+    if (!section) return;
+    const behavior = smooth && !reducedMotion.matches ? 'smooth' : 'instant';
+    if (desktop.matches) {
+      const top = pane.scrollTop + section.getBoundingClientRect().top - pane.getBoundingClientRect().top;
+      pane.scrollTo({ top, behavior });
+    } else {
+      window.scrollTo({ top: window.scrollY + section.getBoundingClientRect().top - 24, behavior });
+    }
+    if (focus) {
+      const heading = section.querySelector('h2');
+      heading.tabIndex = -1;
+      heading.focus({ preventScroll: true });
+    }
+    markSection(section.id);
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    if (!validSections.has(link.hash)) return;
+    link.addEventListener('click', event => {
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      if (window.location.hash !== link.hash) history.pushState(null, '', link.hash);
+      navigate(link.hash, { focus: event.detail === 0 });
     });
+  });
 
-    function simulateKeyPress(key) {
-        key = key.toLowerCase();
-        
-        if (links.hasOwnProperty(key)) {
-            window.open(links[key], '_blank');
-        } else if (key === 'a') {
-            terminal.style.display = 'none';
-            aboutSection.style.display = 'flex';
-            aboutSection.classList.add('fade-in');
-            localStorage.setItem('currentPage', 'about');
-        }
-    }
-
-    function closeAllSections() {
-        // Fade out about section
-        aboutSection.style.opacity = '0';
-        
-        // Wait for fade out, then hide about section and show terminal with fade in
-        setTimeout(() => {
-            aboutSection.style.display = 'none';
-            aboutSection.style.opacity = '1';
-            terminal.style.opacity = '0';
-            terminal.style.display = 'block';
-            
-            // Trigger fade in
-            setTimeout(() => {
-                terminal.style.opacity = '1';
-            }, 10);
-        }, 300);
-        
-        localStorage.setItem('currentPage', 'dashboard');
-    }
-
-    // Make closeAllSections globally accessible for the close hint button
-    window.closeAllSections = closeAllSections;
-});
+  pane.addEventListener('scroll', queueUpdate, { passive: true });
+  window.addEventListener('scroll', queueUpdate, { passive: true });
+  window.addEventListener('resize', queueUpdate, { passive: true });
+  window.addEventListener('popstate', () => navigate(window.location.hash || '#experiences'));
+  window.addEventListener('hashchange', () => navigate(window.location.hash || '#experiences'));
+  desktop.addEventListener('change', () => {
+    const active = pills.find(pill => pill.classList.contains('active'));
+    if (active) navigate(active.hash, { smooth: false });
+  });
+  if (validSections.has(window.location.hash)) navigate(window.location.hash, { smooth: false });
+  updatePosition();
+})();
